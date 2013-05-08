@@ -22,7 +22,7 @@ The details in this guide have been very heavily inspired by several existing st
 
 * [The CoffeeScript Style Guide](#guide)
     * [Code Layout](#code_layout)
-        * [Tabs or Spaces?](#tabs_or_spaces)
+        * [Indentation](#indentation)
         * [Maximum Line Length](#maximum_line_length)
         * [Blank Lines](#blank_lines)
         * [Trailing Whitespace](#trailing_whitespace)
@@ -45,10 +45,10 @@ The details in this guide have been very heavily inspired by several existing st
 <a name="code_layout"/>
 ## Code layout
 
-<a name="tabs_or_spaces"/>
-### Tabs or Spaces?
+<a name="indentation"/>
+### Indentation
 
-Use **spaces only**, with **2 spaces** per indentation level. Never mix tabs and spaces.
+Use **spaces only**, with **2 spaces** per indentation level.
 
 <a name="maximum_line_length"/>
 ### Maximum Line Length
