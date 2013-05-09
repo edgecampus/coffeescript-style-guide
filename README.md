@@ -340,13 +340,13 @@ Take advantage of comprehensions whenever possible:
 To filter:
 
 ```coffeescript
-result = (item for item in array when item.name is "test")
+result = (item for item in array when item.name is 'test')
 ```
 
 To iterate over the keys and values of objects:
 
 ```coffeescript
-object = one: 1, two: 2
+object = {one: 1, two: 2}
 alert("#{key} = #{value}") for key, value of object
 ```
 
@@ -439,7 +439,7 @@ Avoid `return` where not required, unless the explicit return increases clarity.
 Use splats (`...`) when working with functions that accept variable numbers of arguments:
 
 ```coffeescript
-console.log args... # Yes
+console.log(args...) # Yes
 
 (a, b, c, rest...) -> # Yes
 ```
