@@ -2,9 +2,9 @@
 
 This guide presents a collection of best-practices and coding conventions for the [CoffeeScript][coffeescript] programming language.
 
-This guide is intended to be community-driven, and contributions are highly encouraged.
+The guidelines provided here are intended to improve the readability and consistentency of coffeescript code.
 
-Please note that this is a work-in-progress: there is much more that can be specified, and some of the guidelines that have been specified may not be deemed to be idiomatic by the community (in which case, these offending guidelines will be modified or removed, as appropriate).
+A style guide is about consistency. Consistency with this style guide is important. Consistency within a project is more important. Consistency within one module or function is most important. This is a work-in-progress: if something is unspecified, go with your gut, but **stay consistent**.
 
 ## Inspiration
 
@@ -196,11 +196,17 @@ However, inline comments can be useful in certain scenarios:
 <a name="naming_conventions"/>
 ## Naming Conventions
 
-Use `camelCase` (with a leading lowercase character) to name all variables, methods, and object properties.
+Use [camelCase][camel-case] for names consisting of two or more words.
 
-Use `CamelCase` (with a leading uppercase character) to name all classes. _(This style is also commonly referred to as `PascalCase`, `CamelCaps`, or `CapWords`, among [other alternatives][camel-case-variations].)_
+All variables, methods, and object properties start with a leading lowercase character:
+```coffeescript
+camelCase
+```
 
-_(The **official** CoffeeScript convention is camelcase, because this simplifies interoperability with JavaScript. For more on this decision, see [here][coffeescript-issue-425].)_
+All class names start with a leading uppercase character:
+```coffeescript
+CamelCase
+```
 
 For constants, use all uppercase with underscores:
 
@@ -211,7 +217,7 @@ CONSTANT_LIKE_THIS
 Methods and variables that are intended to be "private" should begin with a leading underscore:
 
 ```coffeescript
-_privateMethod: ->
+_privateMethod: () ->
 ```
 
 <a name="functions"/>
@@ -452,6 +458,5 @@ console.log(args...) # Yes
 [ruby-style-guide]: https://github.com/bbatsov/ruby-style-guide
 [google-js-styleguide]: http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml
 [common-coffeescript-idioms]: http://arcturo.github.com/library/coffeescript/04_idioms.html
-[coffeescript-specific-style-guide]: http://awardwinningfjords.com/2011/05/13/coffeescript-specific-style-guide.html
 [coffeescript-faq]: https://github.com/jashkenas/coffee-script/wiki/FAQ
-[camel-case-variations]: http://en.wikipedia.org/wiki/CamelCase#Variations_and_synonyms
+[camel-case]: http://en.wikipedia.org/wiki/CamelCase
