@@ -14,7 +14,6 @@ The details in this guide have been very heavily inspired by several existing st
 - Bozhidar Batsov's [Ruby Style Guide][ruby-style-guide]
 - [Google's JavaScript Style Guide][google-js-styleguide]
 - [Common CoffeeScript Idioms][common-coffeescript-idioms]
-- Thomas Reynolds' [CoffeeScript-specific Style Guide][coffeescript-specific-style-guide]
 - Jeremy Ashkenas' [code review][spine-js-code-review] of [Spine][spine-js]
 - The [CoffeeScript FAQ][coffeescript-faq]
 
@@ -34,6 +33,7 @@ The details in this guide have been very heavily inspired by several existing st
         * [Inline Comments](#inline_comments)
     * [Naming Conventions](#naming_conventions)
     * [Functions](#functions)
+    * [Objects](#objects)
     * [Strings](#strings)
     * [Conditionals](#conditionals)
     * [Looping and Comprehensions](#looping_and_comprehensions)
@@ -97,15 +97,15 @@ Avoid extraneous whitespace in the following situations:
 - Immediately inside parentheses, brackets or braces
 
     ```coffeescript
-       ($ 'body') # Yes
-       ( $ 'body' ) # No
+       console.log(x, y) # Yes
+       console.log( x, y ) # No
     ```
 
 - Immediately before a comma
 
     ```coffeescript
-       console.log x, y # Yes
-       console.log x , y # No
+       console.log(x, y) # Yes
+       console.log(x , y) # No
     ```
 
 Additional recommendations:
@@ -226,11 +226,11 @@ foo = (arg1, arg2) -> # Yes
 foo = (arg1, arg2)-> # No
 ```
 
-Do not use parentheses when declaring functions that take no arguments:
+Use parentheses when declaring functions that take no arguments:
 
 ```coffeescript
-bar = -> # Yes
-bar = () -> # No
+bar = () -> # Yes
+bar = -> # No
 ```
 
 In cases where method calls are being chained and the code does not fit on a single line, each call should be placed on a separate line and indented by one level (i.e., two spaces), with a leading `.`.
@@ -243,46 +243,37 @@ In cases where method calls are being chained and the code does not fit on a sin
   .reduce((x, y) -> x + y)
 ```
 
-When calling functions, choose to omit or include parentheses in such a way that optimizes for readability. Keeping in mind that "readability" can be subjective, the following examples demonstrate cases where parentheses have been omitted or included in a manner that the community deems to be optimal:
+When calling functions use explicit parentheses
 
 ```coffeescript
-baz 12
-
-brush.ellipse x: 10, y: 20 # Braces can also be omitted or included for readability
+baz(12) # Yes
+baz 12 # No
 
 foo(4).bar(8)
 
 obj.value(10, 20) / obj.value(20, 10)
 
-print inspect value
-
 new Tag(new Value(a, b), new Arg(c))
 ```
+<a name="objects"/>
+## Objects
 
-You will sometimes see parentheses used to group functions (instead of being used to group function parameters). Examples of using this style (hereafter referred to as the "function grouping style"):
-
-```coffeescript
-($ '#selektor').addClass 'klass'
-
-(foo 4).bar 8
+Use explicit braces for object definitions
 ```
+brush.ellipse({x: 10, y: 20}) # Yes
+brush.ellipse(x: 10, y: 20) # No
 
-This is in contrast to:
+# Yes
+obj = {
+  name: 'Bob'
+  surname: 'Smith'
+}
 
-```coffeescript
-$('#selektor').addClass 'klass'
-
-foo(4).bar 8
+# No
+obj =
+  name: 'Bob'
+  surname: 'Smith'
 ```
-
-In cases where method calls are being chained, some adopters of this style prefer to use function grouping for the initial call only:
-
-```coffeescript
-($ '#selektor').addClass('klass').hide() # Initial call only
-(($ '#selektor').addClass 'klass').hide() # All calls
-```
-
-The function grouping style is not recommended. However, **if the function grouping style is adopted for a particular project, be consistent with its usage.**
 
 <a name="strings"/>
 ## Strings
