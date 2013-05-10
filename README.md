@@ -426,10 +426,10 @@ Array::slice # Yes
 Array.prototype.slice # No
 ```
 
-Prefer `@property` over `this.property`.
+Prefer `@.property` over `this.property`.
 
 ```coffeescript
-return @property # Yes
+return @.property # Yes
 return this.property # No
 ```
 
