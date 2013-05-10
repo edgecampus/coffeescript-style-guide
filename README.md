@@ -80,8 +80,8 @@ UTF-8 is the preferred source file encoding.
 If using a module system (CommonJS Modules, AMD, etc.), `require` statements should be placed on separate lines.
 
 ```coffeescript
-require 'lib/setup'
-Backbone = require 'backbone'
+require('lib/setup')
+Backbone = require('backbone')
 ```
 These statements should be grouped in the following order:
 
